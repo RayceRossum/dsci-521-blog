@@ -1,10 +1,148 @@
----
-layout: post
-title: First blog post!
----
+# What is a Relational Database?
+  In simple terms, a relational database holds data. Lots of data. But why do we use a relational database if it simply holds data? Doesn't Excel do the same thing? Well, we can imagine a relational database as multiple Excel files that can be linked in a special way.
 
-TODO
+## Example
+  You're working at a brand new startup straight out of UBC's Master of Data Science program. You have a dataset that you want to store in order to do some analysis about where your customers live. The dataset below is named customers and holds data such as the name, phone number and address relating to each customer.
 
-![_config.yml]({{ site.baseurl }}/images/config.png)
+```
+  Customers (name, phone_number, address)
+  [         
+    {
+      name: "Rayce",
+      phone_number: "1234567890",
+      address: "12345 Vancouver St"
+    },
+    {
+      name: "Olivia",
+      phone_number: "0987654321",
+      address: "54321 Montreal St"
+    },
+    {
+      name: "Kipper",
+      phone_number: "5432167890",
+      address: "12345 Vancouver St"
+    }
+  ]
+```
+  And the same data in table format (Used by Excel and *most* relational databases)
 
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+  Customers (name, phone_number, address)
+  | id | name   | phone_number | address              |
+  |----|--------|--------------|----------------------|
+  | 1  | Rayce  | "1234567890" | "12345 Vancouver St" |
+  | 2  | Olivia | "0987654321" | "54321 Montreal St"  |
+  | 3  | Kipper | "5432167890" | "12345 Vancouver St" |
+
+  Do you notice anything interesting about the above dataset?
+
+  Did you notice that two of our customers have the same address? (id: 1 and id: 3).
+
+  Data overlap is when a dataset holds the exact same data multiple times. In a larger dataset we could have significant amounts of data overlap. Even with recent advances in data storage, we're a new startup and we can barely afford coffee for the development staff, let alone the AWS(link to aws) fees for storing data unncessarily!
+
+  How do you think we could solve that problem?
+
+  Relational databases solve this problem in a special way. Relational databases allow you to create multiple tables or *relations*, and to create a linkage between them, called a *relationship*.
+
+  Let's go through the procedure for creating a *relationship* step by step.
+
+## Creating a Relationship
+  When creating a *relationship* we first have to identify which data is going to be duplicated. In our case, addresses are duplicated in our dataset. In order to prevent this costly data duplication, we will first separate our data into multiple datasets.
+
+### Separating the Data
+  Firstly, we'll separate our Customers dataset into a Customers and Addresses datasets.
+```
+  Customers (name, phone_number, address)
+  [         
+    {
+      name: "Rayce",
+      phone_number: "1234567890",
+    },
+    {
+      name: "Olivia",
+      phone_number: "0987654321",
+    },
+    {
+      name: "Kipper",
+      phone_number: "5432167890",
+    }
+  ]
+```
+```
+  Addresses (address)
+  [
+    {
+      address: "12345 Vancouver St"
+    },
+    {
+      address: "54321 Montreal St"
+    }
+  ]
+```
+  And the same data in table format.
+
+  Customers (id, name, phone_number)
+  | id | name   | phone_number |
+  |----|--------|--------------|
+  | 1  | Rayce  | "1234567890" |
+  | 2  | Olivia | "0987654321" |
+  | 3  | Kipper | "5432167890" |
+
+  Addresses (id, address)
+  | id | address              |
+  |----|----------------------|
+  | 1  | "12345 Vancouver St" |
+  | 2  | "54321 Montreal St"  |
+
+  By removing the address entries from the dataset and placing them into their own dataset we've removed a data duplication. We now only store one reference to "12345 Vancouver St", whereas before we had to store two.
+
+  Now that we've removed the data duplication, how do we know which address is related with which customer?
+
+### Defining a Relationship
+  Relationships depend on *keys* to decide which *relation* relies on which other *relation(s)*. A relational database has two different types of *keys*, *primary keys* and *foreign keys*.
+
+#### Primary keys
+  Imagine an Excel file, on the left hand side you have a list of numbers that grows with each row. A *primary key* is the unique identifier of a single *row* of data. Every *row* in the *relation* will have a *primary key* associated with it. Typically, the *primary key* starts at 1 and grows with the size of the *relation*. There is only one *primary key* per *row*.
+
+  | id | name   | phone_number |
+  |----|--------|--------------|
+  | 3  | Kipper | "5432167890" |
+
+  In this example, "id: 3" is the primary key.
+
+To define a relationship we use a *foreign key*. A *foreign key* is the *primary key* of another *relation*.
+
+#### Foreign keys
+  A foreign key is when you use the *primary key* of a *relation* to refer to a *row* in another *relation*. There can be multiple *foreign keys* per *row*.
+
+  Customers (id, name, phone_number, address)
+  | id | name   | phone_number | address |
+  |----|--------|--------------|---------|
+  | 3  | Kipper | "5432167890" | 1       |
+
+  In this example, "address: 1" is a foreign key. This *foreign key* corresponds to the *primary key* in the Addresses *relation*.
+
+  Addresses (id, address)
+  | id | address              |
+  |----|----------------------|
+  | 1  | "12345 Vancouver St" |
+
+
+## Complete Example
+  Now that we know how to define a *relationship*, we can complete our *relations*.
+
+  Customers (id, name, phone_number, address)
+  | id | name   | phone_number | address |
+  |----|--------|--------------|---------|
+  | 1  | Rayce  | "1234567890" | 1       |
+  | 2  | Olivia | "0987654321" | 2       |
+  | 3  | Kipper | "5432167890" | 1       |
+
+  Addresses (id, address)
+  | id | address              |
+  |----|----------------------|
+  | 1  | "12345 Vancouver St" |
+  | 2  | "54321 Montreal St"  |
+
+## Conlusion
+
+  Relational Databases are extremely powerful tools when used correctly.
