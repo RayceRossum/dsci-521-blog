@@ -27,6 +27,7 @@
   And the same data in table format (Used by Excel and *most* relational databases)
 
   Customers (name, phone_number, address)
+  
   | id | name   | phone_number | address              |
   |----|--------|--------------|----------------------|
   | 1  | Rayce  | "1234567890" | "12345 Vancouver St" |
@@ -81,6 +82,7 @@
   And the same data in table format.
 
   Customers (id, name, phone_number)
+  
   | id | name   | phone_number |
   |----|--------|--------------|
   | 1  | Rayce  | "1234567890" |
@@ -88,6 +90,7 @@
   | 3  | Kipper | "5432167890" |
 
   Addresses (id, address)
+  
   | id | address              |
   |----|----------------------|
   | 1  | "12345 Vancouver St" |
@@ -102,6 +105,8 @@
 
 #### Primary keys
   Imagine an Excel file, on the left hand side you have a list of numbers that grows with each row. A *primary key* is the unique identifier of a single *row* of data. Every *row* in the *relation* will have a *primary key* associated with it. Typically, the *primary key* starts at 1 and grows with the size of the *relation*. There is only one *primary key* per *row*.
+  
+  Customers (id, name, phone_number)
 
   | id | name   | phone_number |
   |----|--------|--------------|
@@ -115,6 +120,7 @@ To define a relationship we use a *foreign key*. A *foreign key* is the *primary
   A foreign key is when you use the *primary key* of a *relation* to refer to a *row* in another *relation*. There can be multiple *foreign keys* per *row*.
 
   Customers (id, name, phone_number, address)
+  
   | id | name   | phone_number | address |
   |----|--------|--------------|---------|
   | 3  | Kipper | "5432167890" | 1       |
@@ -122,6 +128,7 @@ To define a relationship we use a *foreign key*. A *foreign key* is the *primary
   In this example, "address: 1" is a foreign key. This *foreign key* corresponds to the *primary key* in the Addresses *relation*.
 
   Addresses (id, address)
+  
   | id | address              |
   |----|----------------------|
   | 1  | "12345 Vancouver St" |
@@ -131,6 +138,7 @@ To define a relationship we use a *foreign key*. A *foreign key* is the *primary
   Now that we know how to define a *relationship*, we can complete our *relations*.
 
   Customers (id, name, phone_number, address)
+  
   | id | name   | phone_number | address |
   |----|--------|--------------|---------|
   | 1  | Rayce  | "1234567890" | 1       |
@@ -138,6 +146,7 @@ To define a relationship we use a *foreign key*. A *foreign key* is the *primary
   | 3  | Kipper | "5432167890" | 1       |
 
   Addresses (id, address)
+  
   | id | address              |
   |----|----------------------|
   | 1  | "12345 Vancouver St" |
