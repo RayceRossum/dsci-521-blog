@@ -18,7 +18,7 @@
 
   Do you notice anything interesting about the above dataset?
 
-  Did you notice that two of our customers have the same address? (id: 1 and id: 3).
+  Did you notice that two of our customers have the same address? (id: 1 and id: 3)
 
   Data overlap is when a dataset holds the exact same data multiple times. In a larger dataset we could have significant amounts of data overlap. Even with recent advances in data storage, we're a new startup and we can barely afford coffee for the development staff, let alone the [AWS](https://aws.amazon.com "AWS") fees for storing data unncessarily!
 
