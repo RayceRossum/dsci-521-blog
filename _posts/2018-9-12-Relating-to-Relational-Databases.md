@@ -1,8 +1,10 @@
 ## What is a Relational Database?
-  In simple terms, a relational database holds data. Lots of data. But why do we use a relational database if it simply holds data? Doesn't Excel do the same thing? Well, relational databases give us some great benefits. We can imagine a relational database as multiple Excel files that can be linked in a special way. This linkage is important for storing and accessing data efficiently. The below example will demonstrate the importance of using a relational database to prevent wasting hard drive space.
+  In simple terms, a relational database holds data. Lots of data. But why do we use a relational database if it simply holds data? Don't spreadsheets do the same thing? Well, relational databases give us some great benefits. We can imagine a relational database as multiple spreadsheets that can be linked in a special way. This linkage is important for storing and accessing data efficiently. The below example will demonstrate the importance of using a relational database to prevent wasting hard drive space.
 
 ## Example - Dealing with Data Duplication
-  You're working at a brand new startup straight out of UBC's Master of Data Science program. You have a dataset that you want to store in order to do some analysis about where your customers live. The dataset below is named customers and holds data such as the name, phone number and address relating to each customer. Being so new, your team has decided that storing all of your data as .csv files and accessing them using Excel is a good idea. SPOILER ALERT: This is not a good idea.
+  You're working at a brand new startup straight out of UBC's Master of Data Science program. You have a dataset that you want to store in order to do some analysis about where your customers live. Being so new, your team has decided that storing all of your data as .csv files and accessing them using a spreadsheets application is a good idea. SPOILER ALERT: This is not a good idea.
+
+  The dataset below is named customers and holds data such as the name, phone number and address relating to each customer.
 
   Customers (name, phone_number, address)
 
@@ -53,7 +55,7 @@
   Relationships depend on *keys* to decide which *relation* relies on which other *relation(s)*. A relational database has two different types of *keys*, *primary keys* and *foreign keys*.
 
 #### Primary keys
-  Imagine an Excel file, on the left hand side you have a list of numbers that grows with each row. A *primary key* is the unique identifier of a single *row* of data. Every *row* in the *relation* will have a *primary key* associated with it. Typically, the *primary key* starts at 1 and grows with the size of the *relation*. There is only one *primary key* per *row*.
+  Imagine a spreadsheets file, on the left hand side you have a list of numbers that grows with each row. A *primary key* is the unique identifier of a single *row* of data. Every *row* in the *relation* will have a *primary key* associated with it. Typically, the *primary key* starts at 1 and grows with the size of the *relation*. There is only one *primary key* per *row*.
 
   Customers (id, name, phone_number)
 
@@ -102,4 +104,4 @@ To define a relationship we use a *foreign key*. A *foreign key* is the *primary
   | 2  | "54321 Montreal St"  |
 
 ## Conlusion
-  We've just illustrated how relational databases solve the issue of data duplication and the importance of storing data properly. Storing our data in a relational database not only saves us in AWS storage fees, it also gives us access to the *Standard Query Language* (SQL), a power language for accessing and managing data programmatically. Relational database's also support security levels so different database users can only access data relevant to themselves. E.g. Customer Rayce shouldn't be able to access data for Customer Olivia, and vice versa. Hopefully you can take this knowledge into the work force and get the development team the coffee machine they deserve. 
+  We've just illustrated how relational databases solve the issue of data duplication and the importance of storing data properly. Storing our data in a relational database not only saves us in AWS storage fees, it also gives us access to the *Standard Query Language* (SQL), a power language for accessing and managing data programmatically. Relational database's also support security levels so different database users can only access data relevant to themselves. E.g. Customer Rayce shouldn't be able to access data for Customer Olivia, and vice versa. Hopefully you can take this knowledge into the work force and get the development team the coffee machine they deserve.
