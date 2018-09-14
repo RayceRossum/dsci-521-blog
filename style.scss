@@ -110,6 +110,26 @@ img {
   max-width: 100%;
 }
 
+// Modified from http://peachinme.blogspot.com/2012/07/minimalist-styles-for-table.html
+table
+{
+	margin: 45px;
+	width: 480px;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+th
+{
+	padding: 10px 8px;
+	border-bottom: 2px solid #6678b1;
+}
+
+td
+{
+	padding: 9px 8px 0px 8px;
+}
+
 // Fixes images in popup boxes from Google Translate
 .gmnoprint img {
   max-width: none;
