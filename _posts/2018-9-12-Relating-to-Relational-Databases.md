@@ -2,7 +2,9 @@
   In simple terms, a relational database holds data. Lots of data. But why do we use a relational database if it simply holds data? Don't spreadsheets do the same thing? Well, relational databases give us some great benefits. We can imagine a relational database as multiple spreadsheets that can be linked in a special way. This linkage is important for storing and accessing data efficiently. The below example will demonstrate the importance of using a relational database to prevent wasting hard drive space.
 
 ## Example - Dealing with Data Duplication
-  You're working at a brand new startup straight out of UBC's Master of Data Science program. You have a dataset that you want to store in order to do some analysis about where your customers live. Being so new, your team has decided that storing all of your data as .csv files and accessing them using a spreadsheets application is a good idea. SPOILER ALERT: This is not a good idea.
+  You're working at a brand new startup straight out of UBC's Master of Data Science program. You have a dataset that you want to store in order to do some analysis about where your customers live. Being so new, your team has decided that storing all of your data as .csv files and accessing them using a spreadsheets application is a good idea.
+
+  SPOILER ALERT: This is not a good idea.
 
   The dataset below is named customers and holds data such as the name, phone number and address relating to each customer.
 
@@ -18,7 +20,7 @@
 
   Did you notice that two of our customers have the same address? (id: 1 and id: 3).
 
-  Data overlap is when a dataset holds the exact same data multiple times. In a larger dataset we could have significant amounts of data overlap. Even with recent advances in data storage, we're a new startup and we can barely afford coffee for the development staff, let alone the AWS(link to aws) fees for storing data unncessarily!
+  Data overlap is when a dataset holds the exact same data multiple times. In a larger dataset we could have significant amounts of data overlap. Even with recent advances in data storage, we're a new startup and we can barely afford coffee for the development staff, let alone the [AWS](https://aws.amazon.com "AWS") fees for storing data unncessarily!
 
   How do you think we could solve that problem?
 
@@ -104,4 +106,10 @@ To define a relationship we use a *foreign key*. A *foreign key* is the *primary
   | 2  | "54321 Montreal St"  |
 
 ## Conlusion
-  We've just illustrated how relational databases solve the issue of data duplication and the importance of storing data properly. Storing our data in a relational database not only saves us in AWS storage fees, it also gives us access to the *Standard Query Language* (SQL), a power language for accessing and managing data programmatically. Relational database's also support security levels so different database users can only access data relevant to themselves. E.g. Customer Rayce shouldn't be able to access data for Customer Olivia, and vice versa. Hopefully you can take this knowledge into the work force and get the development team the coffee machine they deserve.
+  We've just illustrated how relational databases solve the issue of data duplication and the importance of storing data properly.
+
+  Storing our data in a relational database not only saves us in AWS storage fees, it also gives us access to the *Standard Query Language* (SQL), a power language for accessing and managing data programmatically.
+
+  Relational database's also support security levels so different database users can only access data relevant to themselves. E.g. Customer Rayce shouldn't be able to access data for Customer Olivia, and vice versa.
+
+  Hopefully you can take this knowledge into the work force and get the development team the coffee machine they deserve.
