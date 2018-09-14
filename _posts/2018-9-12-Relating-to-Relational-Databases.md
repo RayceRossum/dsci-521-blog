@@ -1,30 +1,8 @@
 ## What is a Relational Database?
-  In simple terms, a relational database holds data. Lots of data. But why do we use a relational database if it simply holds data? Doesn't Excel do the same thing? Well, relational databases give us some great benefits. We can imagine a relational database as multiple Excel files that can be linked in a special way. This linkage is important for storing and accessing data efficiently. The below example will demonstrate the importance of using a relational database to prevent data duplication.
+  In simple terms, a relational database holds data. Lots of data. But why do we use a relational database if it simply holds data? Doesn't Excel do the same thing? Well, relational databases give us some great benefits. We can imagine a relational database as multiple Excel files that can be linked in a special way. This linkage is important for storing and accessing data efficiently. The below example will demonstrate the importance of using a relational database to prevent wasting hard drive space.
 
-## Example
-  You're working at a brand new startup straight out of UBC's Master of Data Science program. You have a dataset that you want to store in order to do some analysis about where your customers live. The dataset below is named customers and holds data such as the name, phone number and address relating to each customer.
-
-```
-  Customers (name, phone_number, address)
-  [         
-    {
-      name: "Rayce",
-      phone_number: "1234567890",
-      address: "12345 Vancouver St"
-    },
-    {
-      name: "Olivia",
-      phone_number: "0987654321",
-      address: "54321 Montreal St"
-    },
-    {
-      name: "Kipper",
-      phone_number: "5432167890",
-      address: "12345 Vancouver St"
-    }
-  ]
-```
-######  And the same data in table format (Used by Excel and *most* relational databases)
+## Example - Dealing with Data Duplication
+  You're working at a brand new startup straight out of UBC's Master of Data Science program. You have a dataset that you want to store in order to do some analysis about where your customers live. The dataset below is named customers and holds data such as the name, phone number and address relating to each customer. Being so new, your team has decided that storing all of your data as .csv files and accessing them using Excel is a good idea. SPOILER ALERT: This is not a good idea.
 
   Customers (name, phone_number, address)
 
@@ -51,35 +29,6 @@
 
 ### Separating the Data
   Firstly, we'll separate our Customers dataset into a Customers and Addresses datasets.
-```
-  Customers (name, phone_number, address)
-  [         
-    {
-      name: "Rayce",
-      phone_number: "1234567890",
-    },
-    {
-      name: "Olivia",
-      phone_number: "0987654321",
-    },
-    {
-      name: "Kipper",
-      phone_number: "5432167890",
-    }
-  ]
-```
-```
-  Addresses (address)
-  [
-    {
-      address: "12345 Vancouver St"
-    },
-    {
-      address: "54321 Montreal St"
-    }
-  ]
-```
-###### And the same data in table format.
 
   Customers (id, name, phone_number)
 
@@ -134,8 +83,8 @@ To define a relationship we use a *foreign key*. A *foreign key* is the *primary
   | 1  | "12345 Vancouver St" |
 
 
-## Complete Example
-  Now that we know how to define a *relationship*, we can complete our *relations*.
+## Finishing our Example
+  Now that we know how to define a *relationship*, we can complete our *relations* and begin our analysis knowing that our data is stored without any duplications.
 
   Customers (id, name, phone_number, address)
 
@@ -153,5 +102,4 @@ To define a relationship we use a *foreign key*. A *foreign key* is the *primary
   | 2  | "54321 Montreal St"  |
 
 ## Conlusion
-
-  Relational Databases are extremely powerful tools when used correctly.
+  We've just illustrated how relational databases solve the issue of data duplication and the importance of storing data properly. Storing our data in a relational database not only saves us in AWS storage fees, it also gives us access to the *Standard Query Language* (SQL), a power language for accessing and managing data programmatically. Relational database's also support security levels so different database users can only access data relevant to themselves. E.g. Customer Rayce shouldn't be able to access data for Customer Olivia, and vice versa. Hopefully you can take this knowledge into the work force and get the development team the coffee machine they deserve. 
