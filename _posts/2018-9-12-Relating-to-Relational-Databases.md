@@ -54,10 +54,10 @@
   Now that we've removed the data duplication, how do we know which address is related with which customer?
 
 ### Defining a Relationship
-  Relationships depend on *keys* to decide which *relation* relies on which other *relation(s)*. A relational database has two different types of *keys*, *primary keys* and *foreign keys*.
+  Relationships depend on *keys* to decide which *relation* relies on which other *relation(s)*. To do this, a relational database uses two different types of *keys*, *primary keys* and *foreign keys*.
 
 #### Primary keys
-  Imagine a spreadsheets file, on the left hand side you have a list of numbers that grows with each row. A *primary key* is the unique identifier of a single *row* of data. Every *row* in the *relation* will have a *primary key* associated with it. Typically, the *primary key* starts at 1 and grows with the size of the *relation*. There is only one *primary key* per *row*.
+  Imagine a spreadsheets file, on the left hand side you have a list of numbers that grows with each row. Those numbers are the *primary key* of the row. A *primary key* is the unique identifier of a single *row* of data. Every *row* in the *relation* will have a *primary key* associated with it. Typically, the *primary key* starts at 1 and grows with the size of the *relation*. There is only one *primary key* per *row*.
 
   Customers (id, name, phone_number)
 
