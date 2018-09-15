@@ -108,7 +108,7 @@ To define a relationship we use a *foreign key*. A *foreign key* is the *primary
 ## Conlusion
   We've just illustrated how relational databases solve the issue of data duplication and the importance of storing data properly.
 
-  Storing our data in a relational database not only saves us in storage fees, it also gives us access to the *Standard Query Language* (SQL), a powerful language for accessing and managing data programmatically.
+  Storing our data in a relational database not only saves us in storage fees, it also gives us access to the [*Standard Query Language* (SQL)] (https://en.wikipedia.org/wiki/SQL "SQL"), a powerful language for accessing and managing data programmatically.
 
   Relational database's also support security levels so different database users can only access data relevant to themselves. E.g. Customer Rayce shouldn't be able to access data for Customer Olivia, and vice versa.
 
