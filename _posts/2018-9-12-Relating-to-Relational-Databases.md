@@ -20,7 +20,7 @@
 
   Did you notice that two of our customers have the same address? (id: 1 and id: 3)
 
-  Data overlap is when a dataset holds the exact same data multiple times. In a larger dataset we could have significant amounts of data overlap. Even with recent advances in data storage, we're a new startup and we can barely afford coffee for the development staff, let alone the [AWS](https://aws.amazon.com "AWS") fees for storing data unncessarily!
+  Data overlap is when a dataset holds the exact same data multiple times. In a larger dataset we could have significant amounts of data overlap. Even with recent advances in data storage, we're a new startup and we can barely afford coffee for the development staff, let alone the [AWS](https://aws.amazon.com "AWS") fees for storing data unnecessarily!
 
   How do you think we could solve that problem?
 
@@ -54,10 +54,10 @@
   Now that we've removed the data duplication, how do we know which address is related with which customer?
 
 ### Defining a Relationship
-  Relationships depend on *keys* to decide which *relation* relies on which other *relation(s)*. A relational database has two different types of *keys*, *primary keys* and *foreign keys*.
+  Relationships depend on *keys* to decide which *relation* relies on which other *relation(s)*. To do this, a relational database uses two different types of *keys*, *primary keys* and *foreign keys*.
 
 #### Primary keys
-  Imagine a spreadsheets file, on the left hand side you have a list of numbers that grows with each row. A *primary key* is the unique identifier of a single *row* of data. Every *row* in the *relation* will have a *primary key* associated with it. Typically, the *primary key* starts at 1 and grows with the size of the *relation*. There is only one *primary key* per *row*.
+  Imagine a spreadsheets file, on the left hand side you have a list of numbers that grows with each row. Those numbers are the *primary key* of the row. A *primary key* is the unique identifier of a single *row* of data. Every *row* in the *relation* will have a *primary key* associated with it. Typically, the *primary key* starts at 1 and grows with the size of the *relation*. There is only one *primary key* per *row*.
 
   Customers (id, name, phone_number)
 
@@ -108,8 +108,8 @@ To define a relationship we use a *foreign key*. A *foreign key* is the *primary
 ## Conlusion
   We've just illustrated how relational databases solve the issue of data duplication and the importance of storing data properly.
 
-  Storing our data in a relational database not only saves us in AWS storage fees, it also gives us access to the *Standard Query Language* (SQL), a power language for accessing and managing data programmatically.
+  Storing our data in a relational database not only saves us in storage fees, it also gives us access to the [*Standard Query Language* (SQL)](https://en.wikipedia.org/wiki/SQL "SQL"), a powerful language for accessing and managing data programmatically.
 
   Relational database's also support security levels so different database users can only access data relevant to themselves. E.g. Customer Rayce shouldn't be able to access data for Customer Olivia, and vice versa.
 
-  Hopefully you can take this knowledge into the work force and get the development team the coffee machine they deserve.
+  Now take this knowledge into the work force and get the development team the coffee machine they deserve.
